@@ -27,12 +27,20 @@ print('Sum of dice is', sum_of_dice)
 # In[5]:
 
 
-# It is your turn! let's replace the none with the code of rolling three dice, instead of two
+import numpy as np
+import pandas as pd  # Import pandas as it is used in In[7]
 
-np.random.seed(1)  # This is for checking answer, do NOT modify this line of code
+np.random.seed(1)  # This is for checking the answer, do NOT modify this line of code
 
-#Modify the code, replace the None
-sum_of_three_dice = None
+# Creating a DataFrame to mimic rolling a die
+die = pd.DataFrame([1, 2, 3, 4, 5, 6])
+
+# Rolling three dice instead of two
+sum_of_three_dice = die.sample(3, replace=True).sum().loc[0]
+
+print('Sum of three dice is', sum_of_three_dice)
+
+
 
 
 # In[4]:
